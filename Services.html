@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Fitness Fusion</title>
+    <link rel="icon" href="assets/image/site_logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2637f6;
+            padding: 10px 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo Styling */
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f4a261;
+        }
+
+        /* Glow Effect on Hover */
+        .logo a:hover {
+            color: #f4a261;
+            text-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261, 0 0 30px #f4a261, 0 0 40px #f4a261, 0 0 50px #f4a261;
+        }
+
+        /* Services Section Styling */
+        .services-section {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 949px;
+            margin: 0 auto;
+        }
+
+        .services-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .service-box {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: #2637f6;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .service-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        /* Membership Section Styling */
+        .membership-section {
+            background-color: #f2f2f2;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .membership-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .membership-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .membership-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .membership-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .membership-title-small {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .membership-price {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #2637f6;
+        }
+
+        .membership-features {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            position: relative;
+            left: 52px;
+        }
+
+        .membership-features li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2637f6;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .site-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f4a261;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #f9f9f9;
+            width: 1200px;
+            color: #2637f6;
+            padding-top:10px;
+        
+        }
+
+        .social-links i {
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        /* .social-links i:hover {
+            transform: scale(1.1);
+        } */
+        footer > p {
+            background-color: #f9f9f9;
+            width: 1200px;
+            color: #2637f6;
+            margin-left: 0px;
+            justify-content: center;
+        }
+        .membership-title{
+                text-align: center;
+                color: #009dc2;
+                text-transform: uppercase;
+                font-size: 70px;
+                line-height: 70px;
+                padding-top: 10px;
+                padding-bottom: 15px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/image/site_logo.png" alt="Gym Logo" style="vertical-align: middle; height: 80px;">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html">Fitness Fusion</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="gallary.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="services-section">
+        <div class="container">
+            <h2 class="services-title">Our Services</h2>
+            <div class="service-wrapper">
+                <div class="service-box">
+                    <i class="fa fa-dumbbell service-icon"></i>
+                    <h3 class="service-title">Personal Training</h3>
+                    <p class="service-description">
+                        Our certified personal trainers work one-on-one with you to develop a customized fitness plan tailored to your individual goals, whether it’s weight loss, muscle gain, or overall wellness.
+                    </p>
+                </div>
+                <div class="service-box">
+                    <i class="fa fa-users service-icon"></i>
+                    <h3 class="service-title">Group Fitness Classes</h3>
+                    <p class="service-description">
+                        Join our energetic group classes, ranging from high-intensity interval training (HIIT) to calming yoga sessions. These classes are designed for all fitness levels, making them a fun and effective way to stay active.
+                    </p>
+                </div>
+                <div class="service-box">
+                    <i class="fa fa-apple-alt service-icon"></i>
+                    <h3 class="service-title">Nutrition Planning</h3>
+                    <p class="service-description">
+                        Our expert nutritionists create personalized meal plans to complement your fitness routine, ensuring you’re fueling your body with the right nutrients for maximum results.
+                    </p>
+                </div>
+                <div class="service-box">
+                    <i class="fa fa-spa service-icon"></i>
+                    <h3 class="service-title">Wellness Programs</h3>
+                    <p class="service-description">
+                        We offer holistic wellness programs that include stress management, sleep improvement, and mental health support, helping you achieve a balanced and healthy lifestyle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Membership Section -->
+    <section class="membership-section">
+        <div class="container">
+            <h2 class="membership-title">Membership Plans</h2>
+            <div class="membership-wrapper">
+                <div class="membership-box">
+                    <h3 class="membership-title-small">Gym Only</h3>
+                    <p class="membership-price">₹20,000/PA</p>
+                    <ul class="membership-features">
+                        <li>Access to gym facilities</li>
+                        <li>Basic fitness assessment</li>
+                        <li>Locker and shower facilities</li>
+                    </ul>
+                </div>
+                <div class="membership-box">
+                    <h3 class="membership-title-small">Gym + Cardio</h3>
+                    <p class="membership-price">₹25,000/PA</p>
+                    <ul class="membership-features">
+                        <li>Access to gym and cardio <br>facilities</li>
+                        <li>Advanced fitness assessment</li>
+                        <li>Locker and shower facilities</li>
+                        <li>Free group fitness classes</li>
+                    </ul>
+                </div>
+                <div class="membership-box">
+                    <h3 class="membership-title-small">Gym + Cardio + Spa</h3>
+                    <p class="membership-price">₹40,000/PA</p>
+                    <ul class="membership-features">
+                        <li>Access to gym, cardio, and <br>spa facilities</li>
+                        <li>Comprehensive fitness and <br>wellness assessment</li>
+                        <li>Locker and shower facilities</li>
+                        <li>Free group fitness classes</li>
+                        <li>Complimentary spa services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="assets/image/site_logo.png" alt="Site Logo" class="footer-logo">
+                <p class="site-name">Fitness Fusion</p>
+                <p class="about-text">
+                    Welcome to Fitness Fusion, your ultimate fitness destination. We offer top-notch facilities, expert trainers, and a variety of fitness programs to help you achieve your health goals. Join us today and start your fitness journey!
+                </p>
+            </div>
+            
+            <div class="footer-section links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#personal-training">Personal Training</a></li>
+                    <li><a href="#group-classes">Group Fitness Classes</a></li>
+                    <li><a href="#nutrition-planning">Nutrition Planning</a></li>
+                    <li><a href="#wellness-programs">Wellness Programs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Fitness Fusion. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

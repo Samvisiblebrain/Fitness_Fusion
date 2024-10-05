@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fitness Fusion</title>
+    <link rel="icon" href="assets/image/site_logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2637f6;
+            padding: 10px 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo Styling */
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f4a261;
+        }
+
+        /* Glow Effect on Hover */
+        .logo a:hover {
+            color: #f4a261;
+            text-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261, 0 0 30px #f4a261, 0 0 40px #f4a261, 0 0 50px #f4a261;
+        }
+
+        /* About Section Styling */
+        .about-section {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-content {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 631px;
+            border-radius: 32px;
+            margin: 20px auto;
+        }
+
+        /* Mission Section Styling */
+        .mission-section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .mission-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #2637f6;
+        }
+
+        .mission-content {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2637f6;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .site-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f4a261;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #f9f9f9;
+            width: 1200px;
+            color: #2637f6;
+            padding-top:10px;
+           
+        }
+
+        .social-links i {
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        /* .social-links i:hover {
+            transform: scale(1.1);
+        } */
+         footer > p {
+            background-color: #f9f9f9;
+            width: 1200px;
+            color: #2637f6;
+            margin-left: 0px;
+            justify-content: center;
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/image/site_logo.png" alt="Gym Logo" style="vertical-align: middle; height: 80px;">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html">Fitness Fusion</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallary.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="about-section">
+        <div class="container">
+            <h2 class="about-title">About Fitness Fusion</h2>
+            <p class="about-content">
+                Fitness Fusion has been a cornerstone of health and fitness in the community for over 28 years. Since our inception, we have remained dedicated to providing our members with the best facilities, personalized training programs, and a supportive environment. We believe that fitness is for everyBODY, and we are committed to helping each member achieve their fitness goals in a motivating and welcoming atmosphere.
+            </p>
+            <img src="assets/image/about.png" alt="About Us Image" class="about-image">
+            <p class="about-content">
+                What sets Fitness Fusion apart is our "Hybrid, Boutique Health Club" approach. We offer a more personalized and customer-focused experience compared to the typical low-price, high-volume gyms. Our team consists of highly qualified trainers and instructors, many with advanced degrees and specialized certifications, who are passionate about helping you succeed.
+            </p>
+        </div>
+    </section>
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="mission-title">Our Mission</h2>
+            <p class="mission-content">
+                Our mission is to inspire and empower our community to lead healthier, happier lives. We strive to create an inclusive environment where everyone feels comfortable and motivated to reach their fitness goals. Whether you're a beginner or a seasoned athlete, Fitness Fusion has the resources and expertise to support you every step of the way.
+            </p>
+            <p class="mission-content">
+                Join us today and become a part of a community that values your health, fitness, and overall well-being. Together, we can achieve great things!
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="assets/image/site_logo.png" alt="Site Logo" class="footer-logo">
+                <p class="site-name">Fitness Fusion</p>
+                <p class="about-text">
+                    Welcome to Fitness Fusion, your ultimate fitness destination. We offer top-notch facilities, expert trainers, and a variety of fitness programs to help you achieve your health goals. Join us today and start your fitness journey!
+                </p>
+            </div>
+            
+            <div class="footer-section links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section services">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#personal-training">Personal Training</a></li>
+                    <li><a href="#group-classes">Group Classes</a></li>
+                    <li><a href="#nutrition-plans">Nutrition Plans</a></li>
+                    <li><a href="#wellness-programs">Wellness Programs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Fitness Fusion. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

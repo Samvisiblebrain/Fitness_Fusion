@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Fusion - Best Gym and Spa in the City</title>
+    <link rel="icon" href="assets/image/site_logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2637f6;
+            padding: 10px 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {   
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo Styling */
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f4a261;
+        }
+
+        /* Glow Effect on Hover */
+        .logo a:hover {
+            color: #f4a261;
+            text-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261, 0 0 30px #f4a261, 0 0 40px #f4a261, 0 0 50px #f4a261;
+        }
+
+        .marquee p {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 0;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .mainbanner > img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #2637f6;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .site-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f4a261;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links img {
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+
+        .main-heading {
+            margin: 40px 10px;
+            text-align: center;
+            color: #09bbf1;
+            font-weight: bolder;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .content-1 {
+            margin: 5%;
+            font-size: 18px;
+        }
+
+        /* General Button Styling */
+        .action-button {
+            text-decoration: none;
+        }
+
+        .action, .action-2 {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .action {
+            background-color: #007bff;
+            color: #fff;
+            margin-left: 300px;
+            margin-top: 10px;
+        }
+
+        .action:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .action-2 {
+            background-color: #28a745;
+            color: #fff;
+            margin-left: 300px;
+            margin-top: 10px;
+        }
+
+        .action-2:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        /* Service Section Styling */
+        .services-home {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .service-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 24%;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .overTickets h2 {
+            text-align: center;
+            color: #009dc2;
+            text-transform: uppercase;
+            font-size: 70px;
+            line-height: 70px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+        }
+
+        /* Membership Section Styling */
+        .membership-section {
+            background-color: #f2f2f2;
+            padding: 42px 133px;
+            text-align: center;
+        }
+
+        .membership-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .membership-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .membership-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .membership-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .membership-title-small {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .membership-price {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #2637f6;
+        }
+
+        .membership-features {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .membership-features li {
+            margin-bottom: 10px;
+        }
+
+        /* Metro Difference Section Styling */
+        .metro-difference {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 5px solid #f4a261;
+        }
+
+        .difference-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .difference-item {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 15px;
+            width: 22%;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .difference-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .difference-icon {
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .difference-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .difference-item p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .membership-title {
+            text-align: center;
+            color: #009dc2;
+            font-family: fantasy;
+            font-size: 70px;
+            line-height: 70px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        /* For tablets and below */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .action, .action-2 {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .overTickets h2, .membership-title {
+                font-size: 36px;
+                line-height: 40px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+            }
+
+            .membership-section {
+                padding: 20px;
+            }
+
+            .membership-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .difference-items {
+                flex-direction: column;
+            }
+
+            .difference-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* For smartphones */
+        @media (max-width: 480px) {
+            .marquee p {
+                font-size: 16px;
+            }
+
+            .main-heading h1 {
+                font-size: 24px;
+            }
+
+            .overTickets h2, .membership-title {
+                font-size: 28px;
+                line-height: 32px;
+            }
+
+            .content-1 {
+                font-size: 16px;
+            }
+
+            .footer-section h3 {
+                font-size: 16px;
+            }
+
+            .membership-price {
+                font-size: 24px;
+            }
+
+            .service-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="marquee">
+            <p>We are open on Sunday!</p>
+        </div>
+        <nav class="navbar">
+                       
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/image/site_logo.png" alt="Gym Logo" style="vertical-align: middle; height: 80px;">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html">Fitness Fusion</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="gallary.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="mainbanner">
+            <img src="assets/image/fitness_fusionbg.png" alt="main banner">
+        </div>
+        <div class="main-heading"><h1>Fitness Fusion has fitness options for EveryBODY</h1></div>
+    </section>
+    <section>
+        <p class="content-1">We are celebrating 28 years in the fitness industry. Throughout nearly three decades and into the next, we are committed to our members, community, and team. We strive to offer top instruction, diverse class genres, and facilities that meet our broad membership base needs for a healthy and fit lifestyle.
+
+            Metro Fitness differentiates itself from the typical low price, high volume ‘gym’ experience by being more of a "Hybrid, Boutique Health Club." We are very customer service oriented, more focused on personalized training, and more passionate about creating an environment that is motivating, welcoming, supportive, and unintimidating. Metro Fitness takes pride in the club’s infrastructure and professional team of trainers and instructors, many of whom have advanced degrees in exercise science and other specialized certifications.
+            
+            Now’s the time to take control of your health and fitness! Get METRO Fit! </p>
+            <a href="contact.html" class="action-button">
+                <button class="action">Join Now</button>
+            </a>
+            <a href="contact.html" class="action-button">
+                <button class="action-2">Contact</button>
+            </a>       
+    </section>
+    <section class="services-home">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-items">
+                <div class="service-item">
+                    <img src="assets/image/personal-training.webp" alt="Personal Training" class="service-icon">
+                    <h3>Personal Training</h3>
+                    <p>Get one-on-one attention from our certified trainers to achieve your fitness goals with personalized workouts and guidance.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/image/Group-Training.jpg" alt="Group Classes" class="service-icon">
+                    <h3>Group Classes</h3>
+                    <p>Join our dynamic group classes that offer motivation and variety, including yoga, spin, and high-intensity interval training.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/image/fitness-nutrition.jpg" alt="Nutrition Plans" class="service-icon">
+                    <h3>Nutrition Plans</h3>
+                    <p>Enhance your results with tailored nutrition plans designed by our experts to complement your fitness regimen.</p>
+                </div>
+                <div class="service-item">
+                    <img src="assets/image/spa.webp" alt="Spa & Wellness" class="service-icon">
+                    <h3>Spa & Wellness</h3>
+                    <p>Relax and rejuvenate with our spa and wellness services, including massages, sauna, and more to help you unwind after workouts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="overTickets">
+            <h2>What Makes Metro Different</h2>
+            </div>
+    </section>
+    <section class="metro-difference">
+        <div class="container">
+            <div class="difference-items">
+                <div class="difference-item">
+                    <img src="assets/image/equip.jpg" alt="State-of-the-Art Equipment" class="difference-icon">
+                    <h3>State-of-the-Art Equipment</h3>
+                    <p>Our gym is equipped with the latest, top-of-the-line machines and free weights to ensure the best workout experience.</p>
+                </div>
+                <div class="difference-item">
+                    <img src="assets/image/fitness-trainer-png-image.png" alt="Expert Trainers" class="difference-icon">
+                    <h3>Expert Trainers</h3>
+                    <p>Our certified trainers are here to provide personalized guidance and help you reach your fitness goals efficiently.</p>
+                </div>
+                <div class="difference-item">
+                    <img src="assets/image/fitness-people.avif" alt="Strong Community" class="difference-icon">
+                    <h3>Strong Community</h3>
+                    <p>Become part of a supportive community that motivates and inspires each other to achieve their best.</p>
+                </div>
+                <div class="difference-item">
+                    <img src="assets/image/open-24-7.png" alt="24/7 Access" class="difference-icon">
+                    <h3>24/7 Access</h3>
+                    <p>Enjoy the flexibility of working out whenever it fits your schedule with our round-the-clock access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Membership Section -->
+    <section class="membership-section">
+        <div class="container">
+            <h2 class="membership-title">Membership Plans</h2>
+            <div class="membership-wrapper">
+                <div class="membership-box">
+                    <h3 class="membership-title-small">Gym Only</h3>
+                    <p class="membership-price">₹20,000/PA</p>
+                    <ul class="membership-features">
+                        <li>Access to gym facilities</li>
+                        <li>Basic fitness assessment</li>
+                        <li>Locker and shower facilities</li>
+                    </ul>
+                </div>
+                <div class="membership-box">
+                    <h3 class="membership-title-small">Gym + Cardio</h3>
+                    <p class="membership-price">₹25,000/PA</p>
+                    <ul class="membership-features">
+                        <li>Access to gym and cardio <br>facilities</li>
+                        <li>Advanced fitness assessment</li>
+                        <li>Locker and shower facilities</li>
+                        <li>Free group fitness classes</li>
+                    </ul>
+                </div>
+                <div class="membership-box">
+                    <h3 class="membership-title-small">Gym + Cardio + Spa</h3>
+                    <p class="membership-price">₹40,000/PA</p>
+                    <ul class="membership-features">
+                        <li>Access to gym, cardio, <br>and spa facilities</li>
+                        <li>Comprehensive fitness <br>and wellness assessment</li>
+                        <li>Locker and shower facilities</li>
+                        <li>Free group fitness classes</li>
+                        <li>Complimentary spa services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>        
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="assets/image/site_logo.png" alt="Site Logo" class="footer-logo">
+                <p class="site-name">Fitness Fusion</p>
+                <p class="about-text">
+                    Welcome to Fitness Fusion, your ultimate fitness destination. We offer top-notch facilities, expert trainers, and a variety of fitness programs to help you achieve your health goals. Join us today and start your fitness journey!
+                </p>
+            </div>
+            
+            <hr class="footer-line">
+    
+            <div class="footer-section links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <hr class="footer-line">
+    
+            <div class="footer-section services">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#personal-training">Personal Training</a></li>
+                    <li><a href="#group-classes">Group Classes</a></li>
+                    <li><a href="#nutrition-plans">Nutrition Plans</a></li>
+                    <li><a href="#spa">Spa & Wellness</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                </ul>
+            </div>
+            
+            <hr class="footer-line">
+    
+            <div class="footer-section socials">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Fitness Fusion. All Rights Reserved.</p>
+    </footer>   
+</body>
+</html>

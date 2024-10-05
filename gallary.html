@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Fitness Fusion</title>
+    <link rel="icon" href="assets/image/site_logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #2637f6;
+            padding: 10px 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo Styling */
+        .logo a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f4a261;
+        }
+
+        /* Glow Effect on Hover */
+        .logo a:hover {
+            color: #f4a261;
+            text-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261, 0 0 30px #f4a261, 0 0 40px #f4a261, 0 0 50px #f4a261;
+        }
+
+        /* Gallery Section Styling */
+        .gallery-section {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .gallery-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 228px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* Image overlay effect */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(38, 55, 246, 0.7);
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        /* Footer Styling (Same as Home Page) */
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .site-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f4a261;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links img {
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+        #backcolor{
+            background-color: #2637f6;
+            border-radius: 15%;
+            padding: 9px;
+            box-shadow: 2px 2px 5px rgba(249, 249, 249, 0.818);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/image/site_logo.png" alt="Gym Logo" style="vertical-align: middle; height: 80px;">
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html">Fitness Fusion</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">Our Gallery</h2>
+            <div class="gallery-wrapper">
+                <div class="gallery-item">
+                    <img src="assets/image/gym1.webp" alt="Gym Equipment">
+                    <div class="overlay">
+                        <div class="overlay-text">Gym Equipment</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym2.jpg" alt="Cardio Area">
+                    <div class="overlay">
+                        <div class="overlay-text">Cardio Area</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym3.jpg" alt="Group Classes">
+                    <div class="overlay">
+                        <div class="overlay-text">Group Classes</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym4.jpg" alt="Yoga Session">
+                    <div class="overlay">
+                        <div class="overlay-text">Yoga Session</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym5.jpg" alt="Weightlifting Area">
+                    <div class="overlay">
+                        <div class="overlay-text">Weightlifting Area</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym6.jpg" alt="Spa & Relaxation">
+                    <div class="overlay">
+                        <div class="overlay-text">Spa & Relaxation</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym7.jpg" alt="Personal Training">
+                    <div class="overlay">
+                        <div class="overlay-text">Personal Training</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym8.jpg" alt="Locker Room">
+                    <div class="overlay">
+                        <div class="overlay-text">Locker Room</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym9.jpg" alt="Outdoor Training">
+                    <div class="overlay">
+                        <div class="overlay-text">Outdoor Training</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/image/gym10.jpg" alt="Fitness Assessments">
+                    <div class="overlay">
+                        <div class
+
+="overlay-text">Fitness Assessments</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about" id="backcolor">
+                <img src="assets/image/site_logo.png" alt="Site Logo" class="footer-logo">
+                <p class="site-name">Fitness Fusion</p>
+                <p class="about-text">
+                    Welcome to Fitness Fusion, your ultimate fitness destination. We offer top-notch facilities, expert trainers, and a variety of fitness programs to help you achieve your health goals. Join us today and start your fitness journey!
+                </p>
+            </div>
+            
+            <hr class="footer-line">
+    
+            <div class="footer-section links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallary.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <hr class="footer-line">
+    
+            <div class="footer-section services">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#personal-training">Personal Training</a></li>
+                    <li><a href="#group-classes">Group Classes</a></li>
+                    <li><a href="#nutrition-plans">Nutrition Plans</a></li>
+                    <li><a href="#spa">Spa & Wellness</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                </ul>
+            </div>
+            
+            <hr class="footer-line">
+    
+            <div class="footer-section socials">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Fitness Fusion. All Rights Reserved.</p>
+    </footer> 
+</body>
+
+</html>
